@@ -1,0 +1,38 @@
+{
+  "name": "babble",
+  "version": "1.0.0",
+  "description": "real time chat-room",
+  "main": "Babble.js",
+
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/christineGharzuzi/babble.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/christineGharzuzi/babble/issues"
+  },
+  
+  "homepage": "https://github.com/christineGharzuzi/babble#readme",
+  "dependencies": {
+    "assert": "^1.4.1",
+    "chai": "^4.1.2",
+    "concurrently": "^3.5.0",
+    "mocha": "^4.0.1",
+    "sinon": "^4.0.1",
+    "window-popup": "^1.0.1"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "devDependencies": {
+    "concurrently": "^3.5.0",
+    "mocha": "^4.0.1"
+  },
+  "scripts": {
+    "start": "concurrently \"node server/main.js\" \"http-server -p 8080\" ",
+    "test": "concurrently \"mocha test/server/test.js\" \"http-server -a localhost -p 8081\" "
+  },
+  "keywords": []
+}
