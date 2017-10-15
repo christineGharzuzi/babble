@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <title>Vegans - Babble</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -7,23 +9,23 @@
 
 <body>
     <header>
-        <img src="images/logo.png" />
+        <img src="images/logo.png" alt="logo"/>
     </header>
     <nav></nav>
     <form action="http://localhost:9000/message" method="POST" id="textInput">
-        <textarea placeholder="Type you message here..." name="message" onkeyup="updateLocalStorage(this)"></textarea>
-        <button type="submit"><img src="images/send.png"></button>
+        <textarea placeholder="Type you message here..." name="message" onkeyup="updateLocalStorage(this)" aria-label="enter your message"></textarea>
+        <button type="submit"><img src="images/send.png" alt="send message"></button>
     </form>
 
     <form class="modal" id="login" action="http://localhost:9000/register" method="POST">
         <div class="modal-content" id="register">
             <h1> Who are you? </h1><br> Full name:
             <br/>
-            <input type="text" class="firstname" id="name"><br> 
+            <input type="text" class="firstname" id="name" aria-label="enter your name"><br> 
             <div class="emptyDivModal"></div>
             Email: 
             <br/>
-            <input type="text" class="lastname" id="email">
+            <input type="text" class="lastname" id="email" aria-label="enter your email">
             <br><br>
             <button class="anonymous" type="submit">Stay Anonymous</button>
             <button class="save" type="submit">Save</button>
@@ -32,11 +34,15 @@
     <main>
         <div class= "chatStats">
         <h1> vegan </h1>
-        <dl class="online">
-            <img src="images/online.png"><dt id="stats">0</dt>
-        </dl>
-        <dl class="allmsgs">
-            <img src="images/msgs.png"><dt id="msgStats">0</dt>
+        <dl>
+
+        <dt class="allmsgs">
+            <img src="images/msgs.png" alt = "number of messages"> </dt>
+            <dd id="msgStats">0</dd>
+        <dt class="online">
+            <img src="images/online.png" alt = "online users"> </dt>
+            <dd id="stats">0</dd>
+        
         </dl>
         </div>
         <ol class=message id=newMsg>

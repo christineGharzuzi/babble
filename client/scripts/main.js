@@ -24,13 +24,11 @@ window.Babble = {
     },
 
     postMessage: function(messages, callback) {
-        console.log("postMessage", messages);
         var myJSON = JSON.stringify(messages);
         var xhr = new XMLHttpRequest();
         xhr.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
                 var output = JSON.parse(this.responseText);
-                console.log("finished:", output);
                 callback(output);
             }
         }
@@ -50,7 +48,6 @@ window.Babble = {
     },
 
     getStats: function(callback) {
-        console.log("getStats");
         var xhr = new XMLHttpRequest();
 
         xhr.onreadystatechange = function() {
@@ -152,12 +149,10 @@ function updateNewMessages(data) {
 }
 
 function printMessages(messages) {
-    console.log("inside printfMessages");
     postMessage(messages, poll);
 }
 
 function deleteMessageRequest() {
-    console.log(this.id);
     Babble.deleteMessage(this.id, updateDelete);
 }
 
@@ -173,7 +168,6 @@ function getNewStats() {
 }
 
 function registerNewUser(userInfo) {
-    console.log("inside register", userInfo);
     var login = document.getElementById("login");
     var data = {
         name: String,
@@ -213,7 +207,6 @@ function emptyCurrentMessage() {
 }
 
 function postMessage(messages) {
-    console.log("inside postMessagestoMain");
     if (!messages) {
         i = 0;
     } else {

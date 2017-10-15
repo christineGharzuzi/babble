@@ -11,15 +11,12 @@ var server = http.createServer(function(request, response) {
     var url = urlUtil.parse(request.url);
     response.setHeader('Access-Control-Allow-Origin', '*');
     response.setHeader('Access-Control-Allow-Methods', 'DELETE')
-    console.log(url.pathname);
-    console.log(request.method);
     if (request.method === 'POST') {
         if (url.pathname === '/messages')
             addnewMessage(request, response);
         else if (url.pathname === '/register') {
             register(request, response);
         } else {
-            console.log("ops");
             response.writeHead(405);
             response.end();
         }
@@ -30,7 +27,6 @@ var server = http.createServer(function(request, response) {
         } else if (url.pathname === '/messages') {
             getnewMessages(request, response);
         } else {
-            console.log("opsss", url.pathname);
             response.writeHead(405);
             response.end();
         }
@@ -43,9 +39,6 @@ var server = http.createServer(function(request, response) {
 });
 
 function register(request, response) {
-    if (request.method !== 'POST') {
-        console.log("NOT POST");
-    }
     var requestBody = '';
     request.on('data', function(chunk) {
         requestBody += chunk.toString();
@@ -72,10 +65,9 @@ function register(request, response) {
                 messaages: emptyRes,
                 stats: res
             };
-            console.log("release pending in register");
             client.end(JSON.stringify(data));
         }
-        console.log('we have all the data - register', clients.length + anonymous);
+
         var res = {
             userInfo: input.userInfo,
             onlines: clients.length + anonymous
@@ -85,7 +77,6 @@ function register(request, response) {
 }
 
 function getStats(request, response) {
-    console.log("inside getStats");
     var stats = {
         onlines: Number,
         count: Number
@@ -100,7 +91,6 @@ function getnewMessages(request, response) {
 
     var url = urlUtil.parse(request.url);
     var count = queryUtil.parse(url.query);
-    console.log("really?", count);
     data = messages.getMessages(count.counter);
 
     if (data.length !== 0) {
@@ -117,12 +107,10 @@ function getnewMessages(request, response) {
         response.end(JSON.stringify(res));
     } else if (waitingClientMessages.indexOf(response) == -1) {
         waitingClientMessages.push(response);
-        console.log("had to push to waiting list", waitingClientMessages.length);
     }
 }
 
 function addnewMessage(request, response) {
-    console.log('inside AddnewMessage');
     var requestBody = '';
     request.on('data', function(chunk) {
         requestBody += chunk.toString();
@@ -133,13 +121,11 @@ function addnewMessage(request, response) {
         requestBody.photo = md5(requestBody.email.toLowerCase().trim());
         var id = messages.addMessage(requestBody);
         requestBody.id = id;
-        console.log("id if added msg", id);
         response.end(JSON.stringify({
             id: id
         }));
 
         while (waitingClientMessages.length > 0) {
-            console.log("popping pending requests");
             var stats = {
                 onlines: Number,
                 count: Number
@@ -158,13 +144,10 @@ function addnewMessage(request, response) {
 }
 
 function deletemessage(request, response) {
-    console.log("inside deleteMessage");
     var url = urlUtil.parse(request.url);
     var id = url.pathname.split("/");
     id = id[2];
-    console.log("message id:", id);
     var deletedItem = messages.deleteMessage(id);
-    console.log("test of true:", deletedItem);
     response.end(JSON.stringify(deletedItem));
 
     while (waitingClientMessages.length > 0) {
@@ -180,7 +163,6 @@ function deletemessage(request, response) {
             messages: message,
             stats: stats
         };
-        console.log("release pending in delete with:", res);
         client.end(JSON.stringify(res));
     }
 }
