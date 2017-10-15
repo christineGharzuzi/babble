@@ -177,15 +177,19 @@
     }
 
 
-    dt{
-    float:right;
-    font-family: 'Raleway', sans-serif;
-    }
+        dl{
+            float:right;
+        }
 
-    dd {
-    float:right;
-    font-size: 90%;
-    }
+        dt{
+        float:left;
+        font-family: 'Raleway', sans-serif;
+        }
+
+        dd {
+        float:left;
+        font-size: 90%;
+        }
     .messageContent:hover .deleteButton {
     opacity: 1;
     }
@@ -496,15 +500,17 @@
         word-break: break-all;
     }
 
-        
+        dl{
+            float:right;
+        }
 
         dt{
-        float:right;
+        float:left;
         font-family: 'Raleway', sans-serif;
         }
 
         dd {
-        float:right;
+        float:left;
         font-size: 90%;
         }
 
