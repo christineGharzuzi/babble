@@ -177,12 +177,12 @@
     }
 
 
-    dl{
+    dt{
     float:right;
     font-family: 'Raleway', sans-serif;
     }
 
-    dt {
+    dd {
     float:right;
     font-size: 90%;
     }
@@ -496,12 +496,14 @@
         word-break: break-all;
     }
 
-        dl{
+        
+
+        dt{
         float:right;
         font-family: 'Raleway', sans-serif;
         }
 
-        dt {
+        dd {
         float:right;
         font-size: 90%;
         }
