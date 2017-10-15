@@ -93,6 +93,32 @@ form.addEventListener('submit', function(e) {
     Babble.postMessage(data, emptyCurrentMessage);
 });
 
+document.querySelector('textarea').onkeypress = function(e){
+    if(e.keyCode == 13){
+            var data = {
+        name: String,
+        email: String,
+        message: String,
+        timestamp: Number,
+        id: Number,
+        photo: String
+    };
+    babble = JSON.parse(localStorage.getItem('babble'));
+    for (var i = 0; i < form.elements.length; i++) {
+        var element = form.elements[i];
+        if (element.name) {
+            data.name = babble.userInfo.name;
+            data.email = babble.userInfo.email;
+            data.message = (element.value);
+            element.value = "";
+            var today = new Date();
+            data.timestamp = today.getHours().toString() + ':' + today.getMinutes().toString();
+        };
+    }
+    Babble.postMessage(data, emptyCurrentMessage);
+    }
+}
+
 window.onload = function() {
     /* Babble has not yet been assing to localStorage*/
     var currentBabble = JSON.parse(localStorage.getItem("babble"));

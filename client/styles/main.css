@@ -8,6 +8,7 @@
     body{
         background-color: #f6f6f6;
         overflow-x : hidden;
+        font-family: 'Nunito', sans-serif;
     }
 
     .modal{
@@ -27,7 +28,6 @@
     .modal-content {
         position:relative;
         background: rgb(249,249,249);
-        font-family: 'Raleway', sans-serif;
         font-size: 50%;
         padding:10px 10px 10px 10px;
         border: 1px solid #888;
@@ -41,7 +41,6 @@
     .firstname {
         margin-bottom: 5px;
         width: 50%;
-        font-family: 'Raleway', sans-serif;
         border: 1px solid #ccc;
         border-radius: 7px;
     }
@@ -52,7 +51,6 @@
 
     .lastname{
         width: 50%;
-        font-family: 'Raleway', sans-serif;
         border: 1px solid #ccc;
         border-radius: 7px;
     }
@@ -60,7 +58,6 @@
     .anonymous{
     text-align: center;
     padding: 2px 2px 2px 2px;
-    font-family: 'Raleway', sans-serif;
     position: absolute;
     bottom: 0;
     float: right;
@@ -74,7 +71,6 @@
 
     .save {
         font-size:inherit;
-        font-family: 'Raleway', sans-serif;
         padding: 2px 2px 2px 2px;
         bottom: 0;
         float:right;
@@ -145,7 +141,6 @@
     }
 
     .messageContent{
-        font-family: 'Raleway', sans-serif;
         font-size: 10px;
         background-color: white;
         margin-left: 2%;
@@ -181,9 +176,13 @@
 
         dt{
         float:left;
-        font-family: 'Raleway', sans-serif;
         }
-
+        .allmsgs img{
+            width: 1.8vw;
+        }
+        .online img{
+            width: 2.8vw;
+        }
         dd {
         float:left;
         font-size: 90%;
@@ -193,7 +192,6 @@
     }
 
     .messageContent{
-        font-family: 'Nunito', sans-serif;
         font-size: 10px;
         background-color: white;
         padding: 1%;
@@ -218,7 +216,6 @@
     .deleteButton {
         float: right;
         border: none;
-        font-family: 'Nunito', sans-serif;
         background-color: transparent;
         border-color:transparent;
         opacity:0;
@@ -268,6 +265,7 @@
     }
 
     body{
+    font-family: 'Nunito', sans-serif;
     background: rgb(246,246,246);
     }
 
@@ -288,7 +286,6 @@
     .modal-content {
         position:relative;
         background: rgb(249,249,249);
-        font-family: 'Nunito', sans-serif;
         font-size: 50%;
         padding:10px 10px 10px 10px;
         border: 1px solid #888;
@@ -301,7 +298,6 @@
     .firstname {
         margin-bottom: 5px;
         width: 50%;
-        font-family: 'Raleway', sans-serif;
         border: 1px solid #ccc;
         border-radius: 7px;
     }
@@ -312,7 +308,6 @@
 
     .lastname{
         width: 50%;
-        font-family: 'Raleway', sans-serif;
         border: 1px solid #ccc;
         border-radius: 7px;
     }
@@ -320,7 +315,6 @@
     .anonymous{
     text-align: center;
     padding: 2px 2px 2px 2px;
-    font-family: 'Raleway', sans-serif;
     position: absolute;
     bottom: 0;
     float: right;
@@ -335,7 +329,6 @@
 
     .save {
         font-size:inherit;
-        font-family: 'Raleway', sans-serif;
         padding: 2px 2px 2px 2px;
         bottom: 0;
         float:right;
@@ -439,6 +432,7 @@
 
 
     main h1{
+        font-family: 'Nunito', sans-serif;
             float:left;
         }
 
@@ -504,9 +498,14 @@
 
         dt{
         float:left;
-        font-family: 'Raleway', sans-serif;
         }
 
+        .allmsgs img{
+            width: 1.8vw;
+        }
+        .online img{
+            width: 2.8vw;
+        }
         dd {
         float:left;
         font-size: 90%;
