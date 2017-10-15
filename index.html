@@ -9,12 +9,12 @@
 
 <body>
     <header>
-        <img src="images/logo.png" />
+        <img src="images/logo.png" alt="logo"/>
     </header>
     <nav></nav>
     <form action="http://localhost:9000/message" method="POST" id="textInput">
         <textarea placeholder="Type you message here..." name="message" onkeyup="updateLocalStorage(this)"></textarea>
-        <button type="submit"><img src="images/send.png"></button>
+        <button type="submit"><img src="images/send.png" alt="send message"></button>
     </form>
 
     <form class="modal" id="login" action="http://localhost:9000/register" method="POST">
