@@ -1,0 +1,48 @@
+<head>
+    <title>Vegans - Babble</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="/styles/main.css">
+</head>
+
+<body>
+    <header>
+        <img src="images/logo.png" />
+    </header>
+    <nav></nav>
+    <form action="http://localhost:9000/message" method="POST" id="textInput">
+        <textarea placeholder="Type you message here..." name="message" onkeyup="updateLocalStorage(this)"></textarea>
+        <button type="submit"><img src="images/send.png"></button>
+    </form>
+
+    <form class="modal" id="login" action="http://localhost:9000/register" method="POST">
+        <div class="modal-content" id="register">
+            <h1> Who are you? </h1><br> Full name:
+            <br/>
+            <input type="text" class="firstname" id="name"><br> 
+            <div class="emptyDivModal"></div>
+            Email: 
+            <br/>
+            <input type="text" class="lastname" id="email">
+            <br><br>
+            <button class="anonymous" type="submit">Stay Anonymous</button>
+            <button class="save" type="submit">Save</button>
+        </div>
+    </form>
+    <main>
+        <div class= "chatStats">
+        <h1> vegan </h1>
+        <dl class="online">
+            <img src="images/online.png"><dt id="stats">0</dt>
+        </dl>
+        <dl class="allmsgs">
+            <img src="images/msgs.png"><dt id="msgStats">0</dt>
+        </dl>
+        </div>
+        <ol class=message id=newMsg>
+        </ol>
+    </main>
+    <script src="scripts/main.js"></script>
+</body>
+
+</html>
